@@ -1,7 +1,11 @@
 # LLM Proto
 
-
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+---
+toc:
+  depth_from: 2
+  depth_to: 4
+  ordered: false
+---
 
 
 ---
