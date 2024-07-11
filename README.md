@@ -4,6 +4,19 @@
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
+<!-- code_chunk_output -->
+
+- [LLM Proto](#llm-proto)
+  - [如何启动服务](#如何启动服务)
+  - [配置服务](#配置服务)
+    - [配置 ollama](#配置-ollama)
+    - [配置 one-api](#配置-one-api)
+      - [设置本地模型](#设置本地模型)
+      - [设置云端模型](#设置云端模型)
+  - [访问 jupyterlab](#访问-jupyterlab)
+
+<!-- /code_chunk_output -->
+
 
 
 ---
