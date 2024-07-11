@@ -17,8 +17,6 @@
 
 # LLM Proto
 
-[TOC]
-
 ---
 
 搭建一个 LLM 开发环境：
