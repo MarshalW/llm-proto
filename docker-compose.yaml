@@ -1,0 +1,64 @@
+networks:
+  llm-proto:
+    name: llm-proto
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: llms
+    init: true
+    restart: always
+    networks:
+      - llm-proto
+    volumes:
+      - /dev:/dev
+      - ./llms/cache:/root/.ollama
+      - ./llms/modelfiles:/root/modelfiles
+    env_file:
+      - .env
+    ports:
+      - 11434:11434
+    privileged: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+  oneapi:
+    image: justsong/one-api
+    container_name: oneapi
+    init: true
+    restart: always
+    networks:
+      - llm-proto
+    volumes:
+      - ./one-api/data:/data
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 4000:3000
+
+  mylab:
+    image: mylab
+    container_name: mylab
+    init: true
+    restart: always
+    networks:
+      - llm-proto
+    env_file:
+      - .env
+    environment:
+      - SHELL=/bin/bash
+    ports:
+      - 8888:8888
+    privileged: true
+    volumes:
+      - /dev:/dev
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
