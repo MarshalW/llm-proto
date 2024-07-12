@@ -43,7 +43,9 @@
 构建 jupyterlab docker 镜像：
 
 ```bash
-cd jupyterlab
+
+git clone https://github.com/MarshalW/llm-proto.git
+cd llm-proto/jupyterlab
 ./build.sh
 ```
 
